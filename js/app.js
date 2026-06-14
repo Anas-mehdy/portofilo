@@ -1107,7 +1107,7 @@ window.renderLightboxMedia = function() {
 // --- CRO ADDITIONAL CONTROLLER LOGIC ---
 
 // Owner's WhatsApp configuration
-const WHATSAPP_PHONE = "966548174415";
+const WHATSAPP_PHONE = "905350215375";
 const WHATSAPP_MSG_AR = "مرحباً أنس، أود حجز استشارة مجانية حول أتمتة عمليات نشاطي التجاري.";
 const WHATSAPP_MSG_EN = "Hello Anas, I would like to book a free consultation regarding automating my business processes.";
 
