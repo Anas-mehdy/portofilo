@@ -64,6 +64,13 @@ const inputPlaceholders = {
 // Initialize App
 document.addEventListener("DOMContentLoaded", () => {
   activeProjects = getProjects();
+  
+  // Set up accordion handlers
+  setupFaqAccordion();
+  
+  // Set up stats scroll animations
+  setupStatsAnimation();
+  
   updateLanguage(currentLang);
   setupScrollEffects();
   setupRevealAnimations();
@@ -136,6 +143,11 @@ function updateLanguage(lang) {
     if (el) {
       el.placeholder = inputPlaceholders[lang][id];
     }
+  }
+
+  // Update WhatsApp links text/prefills
+  if (window.updateWhatsAppLinks) {
+    window.updateWhatsAppLinks();
   }
 
   // Refresh dynamic portfolio items in the correct language
@@ -212,6 +224,36 @@ window.getMediaMarkup = function(item, options = {}) {
 };
 
 // --- PORTFOLIO DYNAMIC RENDERING ---
+window.getBriefText = function(text, maxLength = 80) {
+  if (!text) return "";
+  // Strip bullet points like "- ", "1. ", "•" and leading spaces
+  let clean = text.replace(/^[\s\-•\*\d\.]+/gm, "").replace(/\n/g, " ");
+  if (clean.length <= maxLength) return clean;
+  return clean.substring(0, maxLength).trim() + "...";
+};
+
+window.togglePortfolioDetails = function(index) {
+  const container = document.getElementById(`details-collapsible-${index}`);
+  const btnText = document.getElementById(`toggle-btn-text-${index}`);
+  const btnIcon = document.getElementById(`toggle-btn-icon-${index}`);
+  
+  if (!container || !btnText || !btnIcon) return;
+  
+  const isExpanded = container.classList.contains("expanded");
+  
+  if (isExpanded) {
+    container.classList.remove("expanded");
+    container.style.maxHeight = null;
+    btnText.textContent = translations[currentLang].portfolioViewDetails;
+    btnIcon.className = "fa-solid fa-chevron-down";
+  } else {
+    container.classList.add("expanded");
+    container.style.maxHeight = container.scrollHeight + "px";
+    btnText.textContent = translations[currentLang].portfolioHideDetails;
+    btnIcon.className = "fa-solid fa-chevron-up";
+  }
+};
+
 function renderPortfolio() {
   portfolioGrid.innerHTML = "";
   
@@ -279,6 +321,12 @@ function renderPortfolio() {
 
     const card = document.createElement("div");
     card.className = "portfolio-card reveal";
+    
+    // Generate brief texts
+    const briefProblem = window.getBriefText(problem, 60);
+    const briefSolution = window.getBriefText(solution, 60);
+    const briefResult = window.getBriefText(result, 60);
+    
     card.innerHTML = `
       <span class="portfolio-badge" data-i18n="portfolioTag">${translations[currentLang].portfolioTag}</span>
       ${mediaMarkup}
@@ -286,20 +334,48 @@ function renderPortfolio() {
         <div class="portfolio-icon"><i class="${iconClass}"></i></div>
         <h3>${title}</h3>
       </div>
-      <div class="portfolio-details">
-        <div class="detail-block">
-          <div class="detail-title">${translations[currentLang].portfolioProblem}</div>
-          <div class="detail-content">${problem}</div>
+      
+      <!-- Brief Flow (Problem -> Solution -> Result) -->
+      <div class="portfolio-brief-flow">
+        <div class="brief-flow-step">
+          <span class="brief-flow-label">${translations[currentLang].portfolioProblem}</span>
+          <p>${briefProblem}</p>
         </div>
-        <div class="detail-block">
-          <div class="detail-title">${translations[currentLang].portfolioSolution}</div>
-          <div class="detail-content">${solution}</div>
+        <div class="brief-flow-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+        <div class="brief-flow-step">
+          <span class="brief-flow-label">${translations[currentLang].portfolioSolution}</span>
+          <p>${briefSolution}</p>
         </div>
-        <div class="detail-block">
-          <div class="detail-title">${translations[currentLang].portfolioResult}</div>
-          <div class="detail-content" style="color: var(--accent-cyan); font-weight: 600;">${result}</div>
+        <div class="brief-flow-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+        <div class="brief-flow-step">
+          <span class="brief-flow-label">${translations[currentLang].portfolioResult}</span>
+          <p class="highlight">${briefResult}</p>
         </div>
       </div>
+      
+      <!-- Collapsible Container for Long Details -->
+      <div class="portfolio-details-collapsible" id="details-collapsible-${index}">
+        <div class="portfolio-details" style="border-top: none; padding-top: 15px; margin-top: 0;">
+          <div class="detail-block">
+            <div class="detail-title">${translations[currentLang].portfolioProblem}</div>
+            <div class="detail-content">${problem}</div>
+          </div>
+          <div class="detail-block">
+            <div class="detail-title">${translations[currentLang].portfolioSolution}</div>
+            <div class="detail-content">${solution}</div>
+          </div>
+          <div class="detail-block">
+            <div class="detail-title">${translations[currentLang].portfolioResult}</div>
+            <div class="detail-content" style="color: var(--accent-cyan); font-weight: 600;">${result}</div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Toggle Button -->
+      <button class="portfolio-toggle-btn" onclick="togglePortfolioDetails(${index})">
+        <span class="toggle-btn-text" id="toggle-btn-text-${index}">${translations[currentLang].portfolioViewDetails}</span>
+        <i class="fa-solid fa-chevron-down" id="toggle-btn-icon-${index}"></i>
+      </button>
     `;
     
     portfolioGrid.appendChild(card);
@@ -1027,3 +1103,101 @@ window.renderLightboxMedia = function() {
     : `Media ${lightboxItemIdx + 1} of ${total}`;
   caption.textContent = captionText;
 };
+
+// --- CRO ADDITIONAL CONTROLLER LOGIC ---
+
+// Owner's WhatsApp configuration
+const WHATSAPP_PHONE = "966548174415";
+const WHATSAPP_MSG_AR = "مرحباً أنس، أود حجز استشارة مجانية حول أتمتة عمليات نشاطي التجاري.";
+const WHATSAPP_MSG_EN = "Hello Anas, I would like to book a free consultation regarding automating my business processes.";
+
+window.updateWhatsAppLinks = function() {
+  const msg = currentLang === "ar" ? encodeURIComponent(WHATSAPP_MSG_AR) : encodeURIComponent(WHATSAPP_MSG_EN);
+  const url = `https://wa.me/${WHATSAPP_PHONE}?text=${msg}`;
+  document.querySelectorAll(".whatsapp-link").forEach(link => {
+    link.href = url;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+  });
+};
+
+function setupStatsAnimation() {
+  const statsContainer = document.querySelector(".hero-stats-container");
+  if (!statsContainer) return;
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateStatNumber("stat-projects", 35, "+");
+        animateStatNumber("stat-operations", 150000, "+", true);
+        animateStatNumber("stat-hours", 500, "+");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  
+  observer.observe(statsContainer);
+}
+
+function animateStatNumber(id, target, suffix = "", isLarge = false) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  
+  let current = 0;
+  const duration = 2000; // 2 seconds
+  const start = performance.now();
+  
+  function step(timestamp) {
+    const elapsed = timestamp - start;
+    const progress = Math.min(elapsed / duration, 1);
+    
+    // Easing out quadratic
+    const easeProgress = progress * (2 - progress);
+    current = Math.floor(easeProgress * target);
+    
+    if (isLarge) {
+      if (current >= 1000) {
+        el.textContent = (current / 1000).toFixed(0) + "K" + suffix;
+      } else {
+        el.textContent = current + suffix;
+      }
+    } else {
+      el.textContent = current + suffix;
+    }
+    
+    if (progress < 1) {
+      requestAnimationFrame(step);
+    } else {
+      if (isLarge) {
+        el.textContent = (target >= 1000 ? (target / 1000).toFixed(0) + "K" : target) + suffix;
+      } else {
+        el.textContent = target + suffix;
+      }
+    }
+  }
+  
+  requestAnimationFrame(step);
+}
+
+function setupFaqAccordion() {
+  const faqItems = document.querySelectorAll(".faq-item");
+  faqItems.forEach(item => {
+    const header = item.querySelector(".faq-header");
+    const content = item.querySelector(".faq-content");
+    
+    header.addEventListener("click", () => {
+      const isActive = item.classList.contains("active");
+      
+      // Collapse all FAQ items first
+      faqItems.forEach(otherItem => {
+        otherItem.classList.remove("active");
+        otherItem.querySelector(".faq-content").style.maxHeight = null;
+      });
+      
+      if (!isActive) {
+        item.classList.add("active");
+        content.style.maxHeight = content.scrollHeight + "px";
+      }
+    });
+  });
+}

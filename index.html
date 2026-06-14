@@ -69,6 +69,22 @@
             <a href="#contact" class="btn btn-primary" data-i18n="heroCta">احصل على استشارة مجانية</a>
             <a href="#portfolio" class="btn btn-secondary" data-i18n="navPortfolio">أعمالنا</a>
           </div>
+          
+          <!-- Hero Stats Counters -->
+          <div class="hero-stats-container">
+            <div class="hero-stat-card">
+              <span class="hero-stat-number" id="stat-projects">0</span>
+              <span class="hero-stat-label" data-i18n="statProjects">مشاريع ناجحة</span>
+            </div>
+            <div class="hero-stat-card">
+              <span class="hero-stat-number" id="stat-operations">0</span>
+              <span class="hero-stat-label" data-i18n="statOperations">عملية مؤتمتة</span>
+            </div>
+            <div class="hero-stat-card">
+              <span class="hero-stat-number" id="stat-hours">0</span>
+              <span class="hero-stat-label" data-i18n="statHours">ساعة عمل موفرة أسبوعياً</span>
+            </div>
+          </div>
         </div>
         
         <div class="hero-visual reveal reveal-delay-2">
@@ -94,38 +110,83 @@
       </div>
     </section>
 
+    <!-- PROBLEMS SECTION -->
+    <section id="problems" class="problems">
+      <div class="container">
+        <div class="section-header text-center reveal">
+          <h2 data-i18n="problemsTitle">هل تواجه إحدى هذه المشاكل في عملك؟</h2>
+          <p data-i18n="problemsSubtitle">تكرار العمليات يدوياً يضيع وقتك ويبطئ نمو تجارتك. إليك أبرز ما يعانيه أصحاب الأعمال:</p>
+        </div>
+        
+        <div class="problems-grid">
+          <div class="problem-card reveal">
+            <div class="problem-icon-wrapper"><i class="fa-solid fa-triangle-exclamation"></i></div>
+            <p data-i18n="problem1">تضيع طلبات العملاء بين واتساب والمنصات المختلفة؟</p>
+          </div>
+          <div class="problem-card reveal reveal-delay-1">
+            <div class="problem-icon-wrapper"><i class="fa-solid fa-hourglass-half"></i></div>
+            <p data-i18n="problem2">تقضي ساعات يومياً في أعمال إدارية متكررة؟</p>
+          </div>
+          <div class="problem-card reveal reveal-delay-2">
+            <div class="problem-icon-wrapper"><i class="fa-solid fa-comment-slash"></i></div>
+            <p data-i18n="problem3">الرد على العملاء بطيء وغير منظم؟</p>
+          </div>
+          <div class="problem-card reveal">
+            <div class="problem-icon-wrapper"><i class="fa-solid fa-user-xmark"></i></div>
+            <p data-i18n="problem4">يصعب متابعة العملاء المهتمين بانتظام?</p>
+          </div>
+          <div class="problem-card reveal reveal-delay-1">
+            <div class="problem-icon-wrapper"><i class="fa-solid fa-arrows-spin"></i></div>
+            <p data-i18n="problem5">يتم نقل البيانات والطلبات يدوياً بين عدة أنظمة؟</p>
+          </div>
+        </div>
+        
+        <div class="problems-footer-message reveal">
+          <p data-i18n="problemsFooter">إذا كانت إجابتك نعم على أي من هذه النقاط، فيمكن أتمتة وربط العمليات بالكامل لتعمل تلقائياً وتوفر وقتك.</p>
+        </div>
+
+        <!-- Repeated WhatsApp CTA -->
+        <div class="inline-cta-container reveal">
+          <a href="#" class="btn-whatsapp-cta whatsapp-link">
+            <i class="fa-brands fa-whatsapp"></i>
+            <span data-i18n="ctaWhatsAppButton">احجز استشارة مجانية عبر الواتساب</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
     <!-- TARGET AUDIENCE SECTION -->
     <section id="target-audience" class="target-audience">
       <div class="container">
         <div class="section-header text-center reveal">
-          <h2 data-i18n="targetAudienceTitle">نساعد مختلف القطاعات على النمو بالأتمتة</h2>
+          <h2 data-i18n="industriesTitle">الأنشطة التي أعمل معها ونساعدها</h2>
+          <p data-i18n="industriesSubtitle">نوفر حلول أتمتة وربط مصممة خصيصاً لمساعدة هذه القطاعات على زيادة الكفاءة:</p>
         </div>
         
         <div class="target-grid">
           <div class="target-card scale-reveal reveal-delay-1">
-            <div class="target-icon"><i class="fa-solid fa-cart-shopping"></i></div>
-            <h3 data-i18n="targetEcommerce">المتاجر الإلكترونية</h3>
-            <p data-i18n="targetEcommerceDesc">متابعة الطلبات، تحديث المخزون وإرسال الشحنات تلقائياً.</p>
+            <div class="target-icon"><i class="fa-solid fa-user-doctor"></i></div>
+            <h3 data-i18n="indClinics">العيادات والمراكز الطبية</h3>
           </div>
           <div class="target-card scale-reveal reveal-delay-2">
-            <div class="target-icon"><i class="fa-solid fa-user-doctor"></i></div>
-            <h3 data-i18n="targetClinics">العيادات والمراكز</h3>
-            <p data-i18n="targetClinicsDesc">حجز مواعيد ذكي وإرسال تذكيرات آلية عبر الواتساب للعملاء.</p>
+            <div class="target-icon"><i class="fa-solid fa-cart-shopping"></i></div>
+            <h3 data-i18n="indEcommerce">المتاجر الإلكترونية</h3>
           </div>
           <div class="target-card scale-reveal reveal-delay-3">
             <div class="target-icon"><i class="fa-solid fa-house-chimney"></i></div>
-            <h3 data-i18n="targetRealestate">المكاتب العقارية</h3>
-            <p data-i18n="targetRealestateDesc">تسجيل العملاء المهتمين ومتابعتهم تلقائياً دون تشتيت.</p>
+            <h3 data-i18n="indRealestate">شركات ومكاتب العقارات</h3>
           </div>
           <div class="target-card scale-reveal reveal-delay-1">
             <div class="target-icon"><i class="fa-solid fa-bullhorn"></i></div>
-            <h3 data-i18n="targetAgencies">وكالات التسويق</h3>
-            <p data-i18n="targetAgenciesDesc">إعداد تقارير تلقائية، تنظيم المهام، وأتمتة النشر.</p>
+            <h3 data-i18n="indAgencies">الوكالات التسويقية والإبداعية</h3>
           </div>
           <div class="target-card scale-reveal reveal-delay-2">
-            <div class="target-icon"><i class="fa-solid fa-briefcase"></i></div>
-            <h3 data-i18n="targetSmallBiz">الشركات الناشئة</h3>
-            <p data-i18n="targetSmallBizDesc">ربط الأنظمة وتوفير أجور الموظفين للمهام الروتينية.</p>
+            <div class="target-icon"><i class="fa-solid fa-handshake"></i></div>
+            <h3 data-i18n="indServices">شركات الخدمات والاستشارات</h3>
+          </div>
+          <div class="target-card scale-reveal reveal-delay-3">
+            <div class="target-icon"><i class="fa-solid fa-rocket"></i></div>
+            <h3 data-i18n="indStartups">المشاريع الناشئة والشركات الصغيرة</h3>
           </div>
         </div>
       </div>
@@ -176,6 +237,13 @@
             <h3 data-i18n="service6Title">ربط التطبيقات والأنظمة</h3>
             <p data-i18n="service6Desc">توصيل كافة البرامج التي تستخدمها (Make, Zapier, Sheets) لتعمل معاً ككيان واحد.</p>
           </div>
+        </div>
+        <!-- Repeated WhatsApp CTA -->
+        <div class="inline-cta-container reveal">
+          <a href="#" class="btn-whatsapp-cta whatsapp-link">
+            <i class="fa-brands fa-whatsapp"></i>
+            <span data-i18n="ctaWhatsAppButton">احجز استشارة مجانية عبر الواتساب</span>
+          </a>
         </div>
       </div>
     </section>
@@ -255,6 +323,101 @@
             </div>
           </div>
         </div>
+        <!-- Repeated WhatsApp CTA -->
+        <div class="inline-cta-container reveal">
+          <a href="#" class="btn-whatsapp-cta whatsapp-link">
+            <i class="fa-brands fa-whatsapp"></i>
+            <span data-i18n="ctaWhatsAppButton">احجز استشارة مجانية عبر الواتساب</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW I WORK SECTION (TIMELINE) -->
+    <section id="how-it-works" class="how-it-works">
+      <div class="container">
+        <div class="section-header text-center reveal">
+          <h2 data-i18n="timelineTitle">كيف نعمل معاً لتطوير نشاطك؟</h2>
+          <p data-i18n="timelineSubtitle">خمس خطوات واضحة ومجربة ننقل بها عملياتك من العمل اليدوي المتعب إلى التلقائي المنظم:</p>
+        </div>
+        
+        <div class="timeline-wrapper">
+          <div class="timeline-item reveal">
+            <div class="timeline-badge">١</div>
+            <div class="timeline-content">
+              <h3 data-i18n="step1Title">1. استشارة أولية مجانية</h3>
+              <p data-i18n="step1Desc">نتحدث في مكالمة سريعة لنفهم طبيعة عملك ونحلل التحديات الحالية.</p>
+            </div>
+          </div>
+          
+          <div class="timeline-item reveal">
+            <div class="timeline-badge">٢</div>
+            <div class="timeline-content">
+              <h3 data-i18n="step2Title">2. فحص وتحديد الهدر</h3>
+              <p data-i18n="step2Desc">ندرس جميع المهام اليومية المتكررة لنحدد بدقة ما يمكن أتمتته لتوفير الجهد.</p>
+            </div>
+          </div>
+          
+          <div class="timeline-item reveal">
+            <div class="timeline-badge">٣</div>
+            <div class="timeline-content">
+              <h3 data-i18n="step3Title">3. تصميم الحل المناسب</h3>
+              <p data-i18n="step3Desc">نرسم هيكلاً واضحاً لكيفية ربط أنظمتك وجعلها تعمل معاً كفريق متناغم.</p>
+            </div>
+          </div>
+          
+          <div class="timeline-item reveal">
+            <div class="timeline-badge">٤</div>
+            <div class="timeline-content">
+              <h3 data-i18n="step4Title">4. التنفيذ والاختبار الدقيق</h3>
+              <p data-i18n="step4Desc">نقوم ببناء الربط الآلي وتجربته بالكامل للتأكد من عمله بكفاءة وبلا أخطاء.</p>
+            </div>
+          </div>
+          
+          <div class="timeline-item reveal">
+            <div class="timeline-badge">٥</div>
+            <div class="timeline-content">
+              <h3 data-i18n="step5Title">5. التسليم والدعم المستمر</h3>
+              <p data-i18n="step5Desc">نسلمك النظام جاهزاً للعمل ونقدم لك التدريب مع دعم متواصل لضمان استقراره.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY CHOOSE ME SECTION -->
+    <section id="why-choose-me" class="why-choose-me">
+      <div class="container">
+        <div class="section-header text-center reveal">
+          <h2 data-i18n="whyTitle">لماذا يختارني أصحاب الأعمال؟</h2>
+          <p data-i18n="whySubtitle">نركز دائماً على تحقيق نتائج ملموسة تساهم مباشرة في نمو نشاطك التجاري:</p>
+        </div>
+        
+        <div class="why-grid">
+          <div class="why-card reveal">
+            <div class="why-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+            <h3 data-i18n="why1Title">أنظمة مخصصة لنشاطك</h3>
+            <p data-i18n="why1Desc">لا نستخدم حلولاً معلبة؛ نبني كل ربط أتمتة ليتناسب تماماً مع احتياجاتك الخاصة.</p>
+          </div>
+          
+          <div class="why-card reveal reveal-delay-1">
+            <div class="why-icon"><i class="fa-solid fa-gauge-high"></i></div>
+            <h3 data-i18n="why2Title">تسليم سريع وفعال</h3>
+            <p data-i18n="why2Desc">نحن نقدّر الوقت، لذلك نعمل بكفاءة لتسليم وتفعيل الأنظمة بأسرع وقت لبدء التوفير.</p>
+          </div>
+          
+          <div class="why-card reveal reveal-delay-2">
+            <div class="why-icon"><i class="fa-solid fa-headset"></i></div>
+            <h3 data-i18n="why3Title">دعم فني بعد التسليم</h3>
+            <p data-i18n="why3Desc">لا تنتهي علاقتنا بالتسليم، نكون بجانبك للتأكد من استقرار النظام وتحديثه عند الحاجة.</p>
+          </div>
+          
+          <div class="why-card reveal">
+            <div class="why-icon"><i class="fa-solid fa-chart-line"></i></div>
+            <h3 data-i18n="why4Title">التركيز على النتائج لا الأدوات</h3>
+            <p data-i18n="why4Desc">هدفنا الأساسي هو توفير وقتك، تنظيم العمليات، وزيادة أرباحك، وليس مجرد استخدام أدوات معينة.</p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -272,6 +435,86 @@
       </div>
     </section>
 
+    <!-- FAQ SECTION -->
+    <section id="faq" class="faq">
+      <div class="container">
+        <div class="section-header text-center reveal">
+          <h2 data-i18n="faqTitle">الأسئلة الشائعة حول الأتمتة والربط</h2>
+          <p data-i18n="faqSubtitle">إليك إجابات لأكثر التساؤلات شيوعاً التي يطرحها أصحاب الأعمال قبل البدء:</p>
+        </div>
+        
+        <div class="faq-container">
+          <div class="faq-item reveal">
+            <div class="faq-header">
+              <span data-i18n="faq1Q">هل أحتاج لفريق تقني أو خبرة برمجية؟</span>
+              <span class="faq-icon-toggle"><i class="fa-solid fa-chevron-down"></i></span>
+            </div>
+            <div class="faq-content">
+              <div class="faq-content-inner" data-i18n="faq1A">
+                لا تحتاج لأي معرفة تقنية. نقوم بإعداد وتجهيز كل شيء بالكامل ونسلمك نظاماً سهلاً وبسيط الاستخدام مع تدريب شامل لك ولفريقك.
+              </div>
+            </div>
+          </div>
+          
+          <div class="faq-item reveal">
+            <div class="faq-header">
+              <span data-i18n="faq2Q">كم يستغرق تنفيذ المشروع بالكامل؟</span>
+              <span class="faq-icon-toggle"><i class="fa-solid fa-chevron-down"></i></span>
+            </div>
+            <div class="faq-content">
+              <div class="faq-content-inner" data-i18n="faq2A">
+                تتراوح المدة عادةً بين أسبوع إلى 3 أسابيع كحد أقصى، ويعتمد ذلك على عدد الأنظمة والعمليات المطلوب ربطها.
+              </div>
+            </div>
+          </div>
+          
+          <div class="faq-item reveal">
+            <div class="faq-header">
+              <span data-i18n="faq3Q">هل يمكن ربط وتطوير نظام نستخدمه حالياً؟</span>
+              <span class="faq-icon-toggle"><i class="fa-solid fa-chevron-down"></i></span>
+            </div>
+            <div class="faq-content">
+              <div class="faq-content-inner" data-i18n="faq3A">
+                نعم بالطبع. يمكننا تحسين وتطوير أي نظام تستخدمه حالياً، وربطه مع برامج جديدة لجعله يعمل بكفاءة وسرعة أكبر.
+              </div>
+            </div>
+          </div>
+          
+          <div class="faq-item reveal">
+            <div class="faq-header">
+              <span data-i18n="faq4Q">هل تقدم دعماً بعد تسليم النظام؟</span>
+              <span class="faq-icon-toggle"><i class="fa-solid fa-chevron-down"></i></span>
+            </div>
+            <div class="faq-content">
+              <div class="faq-content-inner" data-i18n="faq4A">
+                نعم، نوفر دعماً فنياً مجانياً ومستمراً بعد التسليم لضمان استقرار العمليات وحل أي تحديات تطرأ بشكل فوري.
+              </div>
+            </div>
+          </div>
+          
+          <div class="faq-item reveal">
+            <div class="faq-header">
+              <span data-i18n="faq5Q">هل يمكن ربط الواتساب مع الأنظمة وبرامج المبيعات؟</span>
+              <span class="faq-icon-toggle"><i class="fa-solid fa-chevron-down"></i></span>
+            </div>
+            <div class="faq-content">
+              <div class="faq-content-inner" data-i18n="faq5A">
+                نعم، هذا هو صلب عملنا. نربط الواتساب بمتجرك أو نظام إدارتك لإرسال إشعارات فورية وتنبيهات تلقائية للعملاء.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Repeated WhatsApp CTA -->
+        <div class="inline-cta-container reveal">
+          <a href="#" class="btn-whatsapp-cta whatsapp-link">
+            <i class="fa-brands fa-whatsapp"></i>
+            <span data-i18n="ctaWhatsAppButton">احجز استشارة مجانية عبر الواتساب</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
     <!-- CONTACT SECTION -->
     <section id="contact" class="contact">
       <div class="container">
@@ -279,6 +522,26 @@
           <div class="section-header">
             <h2 data-i18n="contactTitle">ابدأ أتمتة عملك اليوم</h2>
             <p data-i18n="contactSub">دعنا نوفّر عليك ساعات من العمل كل أسبوع. املأ النموذج وسنتواصل معك.</p>
+          </div>
+          
+          <!-- Trust Bar -->
+          <div class="trust-bar">
+            <div class="trust-item">
+              <i class="fa-solid fa-circle-check"></i>
+              <span data-i18n="trust1">✓ استشارة أولية مجانية بالكامل</span>
+            </div>
+            <div class="trust-item">
+              <i class="fa-solid fa-circle-check"></i>
+              <span data-i18n="trust2">✓ حلول مصممة خصيصاً لنشاطك</span>
+            </div>
+            <div class="trust-item">
+              <i class="fa-solid fa-circle-check"></i>
+              <span data-i18n="trust3">✓ دعم فني متكامل بعد التسليم</span>
+            </div>
+            <div class="trust-item">
+              <i class="fa-solid fa-circle-check"></i>
+              <span data-i18n="trust4">✓ مرونة كاملة وإمكانية العمل عن بعد</span>
+            </div>
           </div>
           
           <form class="contact-form" id="lead-form">
