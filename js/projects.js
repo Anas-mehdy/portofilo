@@ -169,8 +169,9 @@ const defaultProjects = [
 
 // Load projects from localStorage or use defaults
 function getProjects() {
+  const isEdited = localStorage.getItem("automation_projects_edited") === "true";
   const stored = localStorage.getItem("automation_projects");
-  if (stored) {
+  if (isEdited && stored) {
     try {
       return JSON.parse(stored);
     } catch (e) {
@@ -178,19 +179,19 @@ function getProjects() {
       return defaultProjects;
     }
   }
-  // If not in storage, set default
-  saveProjects(defaultProjects);
   return defaultProjects;
 }
 
 // Save projects to localStorage
 function saveProjects(projects) {
   localStorage.setItem("automation_projects", JSON.stringify(projects));
+  localStorage.setItem("automation_projects_edited", "true");
 }
 
 // Reset projects to defaults
 function resetProjects() {
-  saveProjects(defaultProjects);
+  localStorage.removeItem("automation_projects");
+  localStorage.removeItem("automation_projects_edited");
   return defaultProjects;
 }
 
