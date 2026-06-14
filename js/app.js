@@ -5,6 +5,10 @@
 // If left empty, the form runs in demo mode (simulates submission and displays success modal).
 const LEADS_WEBHOOK_URL = ""; 
 
+// Web3Forms configuration (Access Key for direct email submission)
+// If set, form submissions will also be sent to Web3Forms.
+const WEB3FORMS_ACCESS_KEY = "93e4c1a6-dcf9-4479-afd7-a639cc5df5f4";
+
 // Set your Admin Panel password here.
 const ADMIN_PASSWORD = "aboziadoB1";
 
@@ -353,9 +357,35 @@ leadForm.addEventListener("submit", (e) => {
     successModal.classList.add("active");
   };
   
+  const promises = [];
+  
+  // 1. Web3Forms Submission (Email delivery)
+  if (WEB3FORMS_ACCESS_KEY) {
+    const formData = new FormData(leadForm);
+    formData.append("access_key", WEB3FORMS_ACCESS_KEY);
+    formData.append("subject", `New Automation Lead: ${leadData.name}`);
+    formData.append("from_name", "AnasAutomate Portfolio");
+    
+    const web3Promise = fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData
+    })
+    .then(async response => {
+      const data = await response.json();
+      if (!response.ok) {
+        console.error("Web3Forms error:", data.message);
+      } else {
+        console.log("Web3Forms success:", data);
+      }
+    })
+    .catch(err => console.error("Web3Forms network error:", err));
+    
+    promises.push(web3Promise);
+  }
+  
+  // 2. Webhook Submission (Zapier / Make / n8n)
   if (LEADS_WEBHOOK_URL) {
-    // Send data to Make / Zapier / n8n Webhook
-    fetch(LEADS_WEBHOOK_URL, {
+    const webhookPromise = fetch(LEADS_WEBHOOK_URL, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -363,13 +393,16 @@ leadForm.addEventListener("submit", (e) => {
       body: JSON.stringify(leadData)
     })
     .then(response => {
-      console.log("Lead successfully sent to webhook", response);
-      showSuccess();
+      console.log("Webhook success", response);
     })
-    .catch(err => {
-      console.error("Error sending lead to webhook, showing fallback success", err);
-      // Even if webhook fails, we show success modal so customer experience isn't broken,
-      // but we log the error.
+    .catch(err => console.error("Webhook error:", err));
+    
+    promises.push(webhookPromise);
+  }
+  
+  // 3. Complete submission
+  if (promises.length > 0) {
+    Promise.all(promises).then(() => {
       showSuccess();
     });
   } else {

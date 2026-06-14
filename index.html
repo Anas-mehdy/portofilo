@@ -285,17 +285,17 @@
             <div class="form-row">
               <div class="form-group">
                 <label for="form-name" data-i18n="contactFormName">الاسم الكريم</label>
-                <input type="text" id="form-name" required placeholder="مثال: أحمد العتيبي">
+                <input type="text" id="form-name" name="name" required placeholder="مثال: أحمد العتيبي">
               </div>
               <div class="form-group">
                 <label for="form-phone" data-i18n="contactFormPhone">رقم الهاتف (مع رمز الدولة)</label>
-                <input type="tel" id="form-phone" required placeholder="مثال: +966500000000">
+                <input type="tel" id="form-phone" name="phone" required placeholder="مثال: +966500000000">
               </div>
             </div>
             
             <div class="form-group">
               <label for="form-business" data-i18n="contactFormType">نوع النشاط التجاري</label>
-              <select id="form-business" required>
+              <select id="form-business" name="business_type" required>
                 <option value="" disabled selected data-i18n="contactFormTypePlaceholder">اختر نوع نشاطك...</option>
                 <option value="ecommerce" data-i18n="typeOption1">متجر إلكتروني</option>
                 <option value="clinic" data-i18n="typeOption2">عيادة / مركز طبي</option>
@@ -308,7 +308,7 @@
             
             <div class="form-group">
               <label for="form-desc" data-i18n="contactFormDesc">صف العمليات التي تود أتمتتها وما يعيق إنتاجيتك</label>
-              <textarea id="form-desc" required placeholder="مثال: أريد ربط الطلبات بفاتورة تلقائية وإرسال تذكيرات للعميل عبر الواتس عند الدفع..."></textarea>
+              <textarea id="form-desc" name="message" required placeholder="مثال: أريد ربط الطلبات بفاتورة تلقائية وإرسال تذكيرات للعميل عبر الواتس عند الدفع..."></textarea>
             </div>
             
             <button type="submit" class="btn btn-primary btn-block">
