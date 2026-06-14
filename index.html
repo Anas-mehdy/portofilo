@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>خبير الأتمتة | Automation Specialist</title>
+  
+  <!-- FontAwesome 6 CDN for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Custom Stylesheets -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+  <!-- Background Decorative Glowing Blurs -->
+  <div class="bg-glow-container">
+    <div class="bg-glow-1"></div>
+    <div class="bg-glow-2"></div>
+    <div class="bg-glow-3"></div>
+  </div>
+
+  <!-- HEADER / NAVIGATION -->
+  <header id="header">
+    <div class="container nav-container">
+      <a href="#" class="logo">
+        <i class="fa-solid fa-bolt logo-icon"></i>
+        <span data-i18n="brand">أنس للأتمتة | AnasAutomate</span>
+      </a>
+      
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#hero" data-i18n="navHome">الرئيسية</a></li>
+        <li><a href="#services" data-i18n="navServices">الخدمات</a></li>
+        <li><a href="#benefits" data-i18n="navBenefits">الفوائد</a></li>
+        <li><a href="#portfolio" data-i18n="navPortfolio">أعمالنا</a></li>
+        <li><a href="#contact" data-i18n="navContact">اتصل بنا</a></li>
+      </ul>
+      
+      <div class="nav-actions">
+        <button class="lang-switch" id="lang-btn" data-i18n="langBtn">English</button>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section id="hero" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content reveal">
+          <div class="hero-badge">
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+            <span data-i18n="heroBadge">أتمتة ذكية بموثوقية عالية ⚡</span>
+          </div>
+          <h1>
+            <span data-i18n="heroTitlePre">حوّل أعمالك اليدوية إلى</span><br>
+            <span data-i18n="heroTitleHighlight">أنظمة تعمل تلقائياً</span>
+          </h1>
+          <p data-i18n="heroSub">
+            أساعد الشركات والمتاجر والعيادات على أتمتة العمليات المتكررة، تنظيم العملاء، متابعة الطلبات، وتوفير ساعات من العمل اليدوي كل أسبوع.
+          </p>
+          <div class="hero-ctas">
+            <a href="#contact" class="btn btn-primary" data-i18n="heroCta">احصل على استشارة مجانية</a>
+            <a href="#portfolio" class="btn btn-secondary" data-i18n="navPortfolio">أعمالنا</a>
+          </div>
+        </div>
+        
+        <div class="hero-visual reveal reveal-delay-2">
+          <!-- Animated Interactive Orbit Visual -->
+          <div class="visual-orbit">
+            <div class="orbit-node orbit-node-1" title="Zapier / Make">
+              <i class="fa-solid fa-bezier-curve" style="color: var(--accent-purple);"></i>
+            </div>
+            <div class="orbit-node orbit-node-2" title="WhatsApp Automation">
+              <i class="fa-brands fa-whatsapp" style="color: #25d366;"></i>
+            </div>
+            <div class="orbit-node orbit-node-3" title="AI Assistant">
+              <i class="fa-solid fa-robot" style="color: var(--accent-cyan);"></i>
+            </div>
+            <div class="orbit-node orbit-node-4" title="Google Sheets / Database">
+              <i class="fa-solid fa-table-cells" style="color: #0f9d58;"></i>
+            </div>
+          </div>
+          <div class="visual-core">
+            <img src="images/specialist.jpg" alt="خبير الأتمتة | Automation Specialist">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TARGET AUDIENCE SECTION -->
+    <section id="target-audience" class="target-audience">
+      <div class="container">
+        <div class="section-header text-center reveal">
+          <h2 data-i18n="targetAudienceTitle">نساعد مختلف القطاعات على النمو بالأتمتة</h2>
+        </div>
+        
+        <div class="target-grid">
+          <div class="target-card scale-reveal reveal-delay-1">
+            <div class="target-icon"><i class="fa-solid fa-cart-shopping"></i></div>
+            <h3 data-i18n="targetEcommerce">المتاجر الإلكترونية</h3>
+            <p data-i18n="targetEcommerceDesc">متابعة الطلبات، تحديث المخزون وإرسال الشحنات تلقائياً.</p>
+          </div>
+          <div class="target-card scale-reveal reveal-delay-2">
+            <div class="target-icon"><i class="fa-solid fa-user-doctor"></i></div>
+            <h3 data-i18n="targetClinics">العيادات والمراكز</h3>
+            <p data-i18n="targetClinicsDesc">حجز مواعيد ذكي وإرسال تذكيرات آلية عبر الواتساب للعملاء.</p>
+          </div>
+          <div class="target-card scale-reveal reveal-delay-3">
+            <div class="target-icon"><i class="fa-solid fa-house-chimney"></i></div>
+            <h3 data-i18n="targetRealestate">المكاتب العقارية</h3>
+            <p data-i18n="targetRealestateDesc">تسجيل العملاء المهتمين ومتابعتهم تلقائياً دون تشتيت.</p>
+          </div>
+          <div class="target-card scale-reveal reveal-delay-1">
+            <div class="target-icon"><i class="fa-solid fa-bullhorn"></i></div>
+            <h3 data-i18n="targetAgencies">وكالات التسويق</h3>
+            <p data-i18n="targetAgenciesDesc">إعداد تقارير تلقائية، تنظيم المهام، وأتمتة النشر.</p>
+          </div>
+          <div class="target-card scale-reveal reveal-delay-2">
+            <div class="target-icon"><i class="fa-solid fa-briefcase"></i></div>
+            <h3 data-i18n="targetSmallBiz">الشركات الناشئة</h3>
+            <p data-i18n="targetSmallBizDesc">ربط الأنظمة وتوفير أجور الموظفين للمهام الروتينية.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section id="services" class="services">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2 data-i18n="servicesTitle">خدمات الأتمتة التي نقدمها</h2>
+          <p data-i18n="servicesSub">حلول تقنية متكاملة لربط أنظمتك وجعلها تعمل بالنيابة عنك على مدار الساعة.</p>
+        </div>
+        
+        <div class="services-grid">
+          <!-- Service 1 -->
+          <div class="service-card reveal">
+            <div class="service-icon"><i class="fa-solid fa-users-gear"></i></div>
+            <h3 data-i18n="service1Title">أتمتة إدارة العملاء (CRM)</h3>
+            <p data-i18n="service1Desc">استقبال وتخزين بيانات العملاء المحتملين تلقائياً ومتابعتهم فوراً لزيادة المبيعات.</p>
+          </div>
+          <!-- Service 2 -->
+          <div class="service-card reveal reveal-delay-1">
+            <div class="service-icon"><i class="fa-solid fa-box-open"></i></div>
+            <h3 data-i18n="service2Title">أتمتة الطلبات والمخازن</h3>
+            <p data-i18n="service2Desc">معالجة طلبات المشتريات وإرسال إيصالات الدفع وتحديث مخزونك بلمح البصر.</p>
+          </div>
+          <!-- Service 3 -->
+          <div class="service-card reveal reveal-delay-2">
+            <div class="service-icon"><i class="fa-solid fa-share-nodes"></i></div>
+            <h3 data-i18n="service3Title">أتمتة التسويق والمتابعة</h3>
+            <p data-i18n="service3Desc">إرسال حملات البريد الإلكتروني ورسائل الواتساب بناءً على سلوك العميل وبشكل شخصي.</p>
+          </div>
+          <!-- Service 4 -->
+          <div class="service-card reveal">
+            <div class="service-icon"><i class="fa-solid fa-calendar-check"></i></div>
+            <h3 data-i18n="service4Title">أتمتة حجز المواعيد</h3>
+            <p data-i18n="service4Desc">نظام جدولة يتيح للعميل الحجز مباشرة مع تذكيرات ذكية لمنع إلغاء المواعيد.</p>
+          </div>
+          <!-- Service 5 -->
+          <div class="service-card reveal reveal-delay-1">
+            <div class="service-icon"><i class="fa-solid fa-comments"></i></div>
+            <h3 data-i18n="service5Title">أنظمة AI لخدمة العملاء</h3>
+            <p data-i18n="service5Desc">روبوتات دردشة ذكية للرد الفوري على استفسارات عملائك وحل مشاكلهم في ثوانٍ.</p>
+          </div>
+          <!-- Service 6 -->
+          <div class="service-card reveal reveal-delay-2">
+            <div class="service-icon"><i class="fa-solid fa-link"></i></div>
+            <h3 data-i18n="service6Title">ربط التطبيقات والأنظمة</h3>
+            <p data-i18n="service6Desc">توصيل كافة البرامج التي تستخدمها (Make, Zapier, Sheets) لتعمل معاً ككيان واحد.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BENEFITS SECTION -->
+    <section id="benefits" class="benefits">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2 data-i18n="benefitsTitle">لماذا تستثمر في أتمتة عملياتك؟</h2>
+          <p data-i18n="benefitsSub">الأتمتة ليست مجرد رفاهية، بل هي المحرك الأساسي لتقليص التكاليف ومضاعفة الإنتاجية.</p>
+        </div>
+        
+        <div class="benefits-grid">
+          <!-- Visual Statistics column -->
+          <div class="benefits-visual reveal">
+            <div class="stats-container">
+              <div class="stat-item">
+                <div class="stat-number">+20</div>
+                <div class="stat-label" style="font-family: inherit;">ساعة عمل موفرة أسبوعياً</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">دقة العمل وخلو من الأخطاء</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number">5x</div>
+                <div class="stat-label">سرعة إنجاز المهام للعملاء</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number">0%</div>
+                <div class="stat-label">أوراق وضياع للملفات</div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Key list items -->
+          <div class="benefits-list reveal reveal-delay-2">
+            <!-- Item 1 -->
+            <div class="benefit-item">
+              <div class="benefit-num">١</div>
+              <div class="benefit-content">
+                <h3 data-i18n="benefit1Title">توفير الوقت</h3>
+                <p data-i18n="benefit1Desc">وفر ما يصل إلى 15-20 ساعة أسبوعياً من العمل الإداري الروتيني واليدوي.</p>
+              </div>
+            </div>
+            <!-- Item 2 -->
+            <div class="benefit-item">
+              <div class="benefit-num">٢</div>
+              <div class="benefit-content">
+                <h3 data-i18n="benefit2Title">تقليل الأخطاء البشرية</h3>
+                <p data-i18n="benefit2Desc">الأنظمة لا تنام ولا تخطئ في نقل البيانات، دقة متناهية بنسبة 100%.</p>
+              </div>
+            </div>
+            <!-- Item 3 -->
+            <div class="benefit-item">
+              <div class="benefit-num">٣</div>
+              <div class="benefit-content">
+                <h3 data-i18n="benefit3Title">سرعة تنفيذ المهام</h3>
+                <p data-i18n="benefit3Desc">استجابة فورية لطلبات العملاء ورسائلهم ترفع من رضاهم ومعدلات الشراء.</p>
+              </div>
+            </div>
+            <!-- Item 4 -->
+            <div class="benefit-item">
+              <div class="benefit-num">٤</div>
+              <div class="benefit-content">
+                <h3 data-i18n="benefit4Title">تنظيم العمل وسلاسته</h3>
+                <p data-i18n="benefit4Desc">لوحات بيانات موحدة تظهر تدفق العمليات وتدفق العملاء بوضوح تام.</p>
+              </div>
+            </div>
+            <!-- Item 5 -->
+            <div class="benefit-item">
+              <div class="benefit-num">٥</div>
+              <div class="benefit-content">
+                <h3 data-i18n="benefit5Title">تحسين تجربة العملاء</h3>
+                <p data-i18n="benefit5Desc">تواصل مستمر وتجربة متكاملة خالية من التأخير أو الإهمال.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO SECTION -->
+    <section id="portfolio" class="portfolio">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2 data-i18n="portfolioTitle">مشاريع عملية ناجحة</h2>
+          <p data-i18n="portfolioSub">شاهد كيف ساعدت عملائي على الانتقال من الفوضى والعمل اليدوي إلى الكفاءة التامة. (اضغط لرؤية التفاصيل)</p>
+        </div>
+        
+        <div class="portfolio-grid" id="portfolio-grid">
+          <!-- Dynamically populated from JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="contact">
+      <div class="container">
+        <div class="contact-card reveal">
+          <div class="section-header">
+            <h2 data-i18n="contactTitle">ابدأ أتمتة عملك اليوم</h2>
+            <p data-i18n="contactSub">دعنا نوفّر عليك ساعات من العمل كل أسبوع. املأ النموذج وسنتواصل معك.</p>
+          </div>
+          
+          <form class="contact-form" id="lead-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="form-name" data-i18n="contactFormName">الاسم الكريم</label>
+                <input type="text" id="form-name" required placeholder="مثال: أحمد العتيبي">
+              </div>
+              <div class="form-group">
+                <label for="form-phone" data-i18n="contactFormPhone">رقم الهاتف (مع رمز الدولة)</label>
+                <input type="tel" id="form-phone" required placeholder="مثال: +966500000000">
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="form-business" data-i18n="contactFormType">نوع النشاط التجاري</label>
+              <select id="form-business" required>
+                <option value="" disabled selected data-i18n="contactFormTypePlaceholder">اختر نوع نشاطك...</option>
+                <option value="ecommerce" data-i18n="typeOption1">متجر إلكتروني</option>
+                <option value="clinic" data-i18n="typeOption2">عيادة / مركز طبي</option>
+                <option value="realestate" data-i18n="typeOption3">مكتب عقاري</option>
+                <option value="agency" data-i18n="typeOption4">وكالة تسويق / خدمات</option>
+                <option value="smallbiz" data-i18n="typeOption5">شركة صغيرة / ناشئة</option>
+                <option value="other" data-i18n="typeOption6">أخرى</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="form-desc" data-i18n="contactFormDesc">صف العمليات التي تود أتمتتها وما يعيق إنتاجيتك</label>
+              <textarea id="form-desc" required placeholder="مثال: أريد ربط الطلبات بفاتورة تلقائية وإرسال تذكيرات للعميل عبر الواتس عند الدفع..."></textarea>
+            </div>
+            
+            <button type="submit" class="btn btn-primary btn-block">
+              <span data-i18n="contactFormBtn">أرسل الطلب واحصل على استشارة مجانية</span>
+              <i class="fa-solid fa-paper-plane"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-container">
+      <a href="#" class="footer-logo">
+        <i class="fa-solid fa-bolt logo-icon"></i>
+        <span data-i18n="brand">أنس للأتمتة | AnasAutomate</span>
+      </a>
+      
+      <div class="footer-rights">
+        <span data-i18n="footerRights">جميع الحقوق محفوظة © 2026. تصميم مخصص للمحترفين.</span>
+      </div>
+      
+      <!-- Lock button to trigger admin modal -->
+      <button class="admin-trigger" id="admin-trigger-btn" aria-label="Admin Control Panel">
+        <i class="fa-solid fa-lock"></i>
+      </button>
+    </div>
+  </footer>
+
+  <!-- DYNAMIC SUCCESS DIALOG MODAL -->
+  <div class="success-modal" id="success-modal">
+    <div class="success-modal-content">
+      <div class="success-icon"><i class="fa-solid fa-circle-check"></i></div>
+      <h3 data-i18n="successModalTitle">تم إرسال طلبك بنجاح! 🎉</h3>
+      <p data-i18n="successModalBody">شكراً لثقتك. لقد استلمنا تفاصيل عملك وسيقوم الأخصائي بدراستها والتواصل معك عبر الواتساب أو الهاتف خلال أقل من 24 ساعة لترتيب جلستك الاستشارية المجانية.</p>
+      <button class="btn btn-primary" id="success-modal-close" data-i18n="successModalClose">حسناً، فهمت</button>
+    </div>
+  </div>
+
+  <!-- PORTFOLIO ADMIN CONTROL PANEL MODAL -->
+  <div class="admin-modal" id="admin-modal">
+    <div class="admin-container">
+      
+      <!-- Password authentication gate -->
+      <div class="admin-gate" id="admin-gate">
+        <i class="fa-solid fa-shield-halved" style="font-size: 3.5rem; color: var(--accent-purple);"></i>
+        <h3 data-i18n="adminTitle">لوحة تحكم إدارة المشاريع</h3>
+        <div class="admin-form-group">
+          <label for="admin-password" data-i18n="adminPassLabel">أدخل رمز المرور للوصول:</label>
+          <input type="password" id="admin-password" placeholder="رمز المرور الخاص بالإدارة">
+        </div>
+        <button class="btn btn-primary" id="admin-login-btn" data-i18n="adminLoginBtn">دخول</button>
+        <button class="btn btn-secondary" id="admin-gate-close" data-i18n="adminCloseBtn">إغلاق</button>
+      </div>
+      
+      <!-- Main manager panel -->
+      <div class="admin-dashboard" id="admin-dashboard" style="display: none;">
+        <div class="admin-header">
+          <h3>
+            <i class="fa-solid fa-sliders"></i>
+            <span data-i18n="adminTitle">لوحة تحكم إدارة المشاريع</span>
+          </h3>
+          <button class="admin-close" id="admin-panel-close" aria-label="Close Dashboard">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        
+        <div class="admin-body">
+          <div class="admin-toolbar">
+            <button class="btn btn-primary" id="admin-add-project">
+              <i class="fa-solid fa-plus"></i>
+              <span data-i18n="adminAddBtn">إضافة مشروع جديد</span>
+            </button>
+            <button class="btn btn-secondary" id="admin-export-btn">
+              <i class="fa-solid fa-code"></i>
+              <span data-i18n="adminExportBtn">نسخ الكود البرمجي (تصدير)</span>
+            </button>
+            <button class="btn btn-secondary" id="admin-reset-btn" style="border-color: rgba(239, 68, 68, 0.4); color: #fca5a5;">
+              <i class="fa-solid fa-rotate-left"></i>
+              <span data-i18n="adminResetBtn">استعادة الافتراضي</span>
+            </button>
+          </div>
+          
+          <div class="admin-project-list" id="admin-project-list">
+            <!-- Dynamic list of projects for editing will be loaded here -->
+          </div>
+        </div>
+        
+        <div class="admin-footer">
+          <button class="btn btn-secondary" id="admin-cancel-btn" data-i18n="adminCloseBtn">إغلاق</button>
+          <button class="btn btn-primary" id="admin-save-btn">
+            <i class="fa-solid fa-floppy-disk"></i>
+            <span data-i18n="adminSaveBtn">حفظ التعديلات</span>
+          </button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+  <!-- DYNAMIC LIGHTBOX MODAL -->
+  <div class="lightbox-modal" id="lightbox-modal">
+    <button class="lightbox-close" id="lightbox-close" aria-label="Close Lightbox">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+    <button class="lightbox-nav prev" id="lightbox-prev" aria-label="Previous">
+      <i class="fa-solid fa-chevron-left"></i>
+    </button>
+    <button class="lightbox-nav next" id="lightbox-next" aria-label="Next">
+      <i class="fa-solid fa-chevron-right"></i>
+    </button>
+    <div class="lightbox-content" id="lightbox-content"></div>
+    <div class="lightbox-caption" id="lightbox-caption"></div>
+  </div>
+
+  <!-- Clipboard confirmation alert -->
+  <div class="copy-feedback" id="copy-feedback">
+    <i class="fa-solid fa-circle-check"></i>
+    <span data-i18n="adminExportSuccess">تم نسخ الكود البرمجي للمشاريع بنجاح! يمكنك الآن لصقه في ملف projects.js لتجعله دائماً لجميع الزوار.</span>
+  </div>
+
+  <!-- Javascript Modules -->
+  <script src="js/translations.js"></script>
+  <script src="js/projects.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
