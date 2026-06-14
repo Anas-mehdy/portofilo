@@ -6,7 +6,7 @@
 const LEADS_WEBHOOK_URL = ""; 
 
 // Set your Admin Panel password here.
-const ADMIN_PASSWORD = "admin123";
+const ADMIN_PASSWORD = "aboziadoB1";
 
 // App State
 let currentLang = "ar"; // Default language
