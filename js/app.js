@@ -5,6 +5,9 @@
 // If left empty, the form runs in demo mode (simulates submission and displays success modal).
 const LEADS_WEBHOOK_URL = ""; 
 
+// Set your Admin Panel password here.
+const ADMIN_PASSWORD = "admin123";
+
 // App State
 let currentLang = "ar"; // Default language
 let activeProjects = [];
@@ -410,7 +413,7 @@ adminPasswordInput.addEventListener("keypress", (e) => {
 
 function validateAdminLogin() {
   const password = adminPasswordInput.value.trim();
-  if (password === "admin123") {
+  if (password === ADMIN_PASSWORD) {
     // Authenticated
     adminGate.style.display = "none";
     adminDashboard.style.display = "flex";
