@@ -1726,6 +1726,14 @@ footer {
 }
 
 @media (max-width: 576px) {
+  .portfolio-grid,
+  .services-grid,
+  .problems-grid,
+  .why-grid,
+  .target-grid {
+    grid-template-columns: 1fr;
+  }
+
   .portfolio-brief-flow {
     flex-direction: column;
     gap: 12px;
